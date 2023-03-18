@@ -9,7 +9,8 @@
         "*.ts"
       ],
       "parserOptions": {
-        "project": ["tsconfig.(app|spec).json"]
+        "project": ["tsconfig.(app|spec).json"],
+        "createDefaultProgram": true
       },
       "extends": [
         "eslint:recommended",
@@ -17,7 +18,8 @@
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
         "airbnb-typescript/base",
-        "plugin:import/recommended"
+        "plugin:import/recommended",
+        "plugin:import/typescript"
       ],
       "rules": {
         "@angular-eslint/directive-selector": [
