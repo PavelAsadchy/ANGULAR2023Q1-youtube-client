@@ -8,6 +8,7 @@ import { CardModule } from './pages/card/card.module';
 import { SearchModule } from './pages/search/search.module';
 import { SharedModule } from './shared/modules/shared/shared.module';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { CoreModule } from './shared/modules/core/core.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     AuthModule,
     SearchModule,
     CardModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
