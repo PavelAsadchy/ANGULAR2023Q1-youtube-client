@@ -9,6 +9,7 @@ import { SearchModule } from './pages/search/search.module';
 import { SharedModule } from './shared/modules/shared/shared.module';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CoreModule } from './shared/modules/core/core.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CoreModule } from './shared/modules/core/core.module';
     SearchModule,
     CardModule,
     CoreModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
