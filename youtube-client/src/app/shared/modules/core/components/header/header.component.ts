@@ -9,7 +9,7 @@ export class HeaderComponent {
   @Output()
   resultListEnabled = new EventEmitter<boolean>();
 
-  enableResultList(isEnabled: boolean) {
+  enableResultList(isEnabled: boolean): void {
     this.resultListEnabled.emit(isEnabled);
   }
 }

@@ -10,8 +10,6 @@ export class SearchInputComponent {
   searchInput = '';
   settingsEnabled = true;
   resultsSearch = '';
-  @Output()
-  resultListEnabled = new EventEmitter<boolean>();
   sortByMode: SortBy = {
     date: {
       label: 'date',
@@ -23,17 +21,20 @@ export class SearchInputComponent {
       isModeOn: false,
       isUp: false,
     },
-  }
+  };
 
-  enableResultList() {
+  @Output()
+  resultListEnabled = new EventEmitter<boolean>();
+
+  enableResultList(): void {
     this.resultListEnabled.emit(true);
   }
 
-  toggleSettings() {
+  toggleSettings(): void {
     this.settingsEnabled = !this.settingsEnabled;
   }
 
-  sortBySelect(option: keyof SortBy) {
+  sortBySelect(option: keyof SortBy): void {
     for (let key in this.sortByMode) {
       if (key === option) {
         this.sortByMode[key].isModeOn = true;
