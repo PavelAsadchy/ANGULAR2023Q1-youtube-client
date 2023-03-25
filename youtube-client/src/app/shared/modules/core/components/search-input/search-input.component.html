@@ -13,7 +13,7 @@
     <div class="search-input__wrapper">
       <input [(ngModel)]="searchInput" class="search-input__field">
 
-      <button class="button search-input__btn">
+      <button class="button search-input__btn" (click)="enableResultList()">
         search
       </button>
 

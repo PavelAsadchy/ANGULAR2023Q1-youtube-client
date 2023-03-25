@@ -1,1 +1,5 @@
-<p>result-list works!</p>
+<ul class="result-list">
+  <li *ngFor="let item of resultList">
+    <app-result-item [item]="item"></app-result-item>
+  </li>
+</ul>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { YoutubeItemStatistics } from 'src/app/shared/models/youtube-item.model';
 
 @Component({
   selector: 'app-statistics',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./statistics.component.scss'],
 })
 export class StatisticsComponent {
-
+  @Input()
+  stats!: YoutubeItemStatistics;
 }

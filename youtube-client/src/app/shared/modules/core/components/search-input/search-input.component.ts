@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { SortBy, SORT_BY_OPTIONS } from 'src/app/shared/models/sort-by.model';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { SortBy } from 'src/app/shared/models/sort-by.model';
 
 @Component({
   selector: 'app-search-input',
@@ -10,6 +10,8 @@ export class SearchInputComponent {
   searchInput = '';
   settingsEnabled = true;
   resultsSearch = '';
+  @Output()
+  resultListEnabled = new EventEmitter<boolean>();
   sortByMode: SortBy = {
     date: {
       label: 'date',
@@ -21,6 +23,10 @@ export class SearchInputComponent {
       isModeOn: false,
       isUp: false,
     },
+  }
+
+  enableResultList() {
+    this.resultListEnabled.emit(true);
   }
 
   toggleSettings() {

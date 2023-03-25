@@ -6,6 +6,7 @@ import { SearchComponent } from './container/search.component';
 import { ResultListComponent } from './components/result-list/result-list.component';
 import { ResultItemComponent } from './components/result-item/result-item.component';
 import { CoreModule } from 'src/app/shared/modules/core/core.module';
+import { SharedModule } from 'src/app/shared/modules/shared/shared.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { CoreModule } from 'src/app/shared/modules/core/core.module';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     CoreModule,
     SearchRoutingModule,
   ],

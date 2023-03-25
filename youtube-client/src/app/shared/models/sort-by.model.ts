@@ -1,8 +1,3 @@
-export enum SORT_BY_OPTIONS {
-  date,
-  viewsCount,
-}
-
 interface SortOption {
   label: string,
   isModeOn: boolean,

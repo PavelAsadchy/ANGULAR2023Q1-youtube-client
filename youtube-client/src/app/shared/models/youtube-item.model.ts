@@ -30,7 +30,7 @@ interface YoutubeItemSnippet {
   defaultAudioLanguage: string;
 }
 
-interface YoutubeItemStatistics {
+export interface YoutubeItemStatistics {
   viewCount: number;
   likeCount: number;
   dislikeCount: number;

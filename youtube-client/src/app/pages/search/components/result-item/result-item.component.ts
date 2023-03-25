@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { YoutubeItem } from 'src/app/shared/models/youtube-item.model';
 
 @Component({
   selector: 'app-result-item',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./result-item.component.scss'],
 })
 export class ResultItemComponent {
-
+  @Input()
+  item!: YoutubeItem;
 }

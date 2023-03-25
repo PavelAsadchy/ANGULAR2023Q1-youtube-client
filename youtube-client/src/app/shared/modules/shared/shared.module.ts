@@ -18,6 +18,7 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
     CommonModule,
     FormsModule,
     MatIconModule,
+    StatisticsComponent,
   ],
 })
 export class SharedModule { }

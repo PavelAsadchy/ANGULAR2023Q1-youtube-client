@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
-  isResultList = false;
+  resultListEnabled = false;
+
+  enableResultList(isEnabled: boolean) {
+    this.resultListEnabled = isEnabled;
+  }
 }

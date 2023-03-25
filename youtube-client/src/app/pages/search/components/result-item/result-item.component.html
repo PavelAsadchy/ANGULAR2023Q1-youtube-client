@@ -1,1 +1,9 @@
-<p>result-item works!</p>
+<div class="result-item">
+  <img class="result-item__preview" src="{{ item.snippet.thumbnails.maxres?.url }}" >
+
+  <app-statistics [stats]="item.statistics" class="result-item__stats"></app-statistics>
+
+  <h3 class="result-item__title">{{ item.snippet.title }}</h3>
+
+  <button class="result-item__link">more...</button>
+</div>
