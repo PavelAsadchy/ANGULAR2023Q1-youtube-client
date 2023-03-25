@@ -1,0 +1,12 @@
+.header {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-primary);
+
+  &__search {
+    width: 100%;
+    max-width: 570px;
+  }
+}
