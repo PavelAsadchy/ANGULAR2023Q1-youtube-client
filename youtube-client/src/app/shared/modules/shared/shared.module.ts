@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule }   from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 
@@ -15,6 +16,7 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
   ],
   exports: [
     CommonModule,
+    FormsModule,
     MatIconModule,
   ],
 })

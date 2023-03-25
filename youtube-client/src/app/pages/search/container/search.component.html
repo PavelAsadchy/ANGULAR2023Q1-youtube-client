@@ -1,5 +1,5 @@
 <app-header></app-header>
 
-<div class="search__content">
-  Content
+<div *ngIf="isResultList" class="search__content">
+  <app-result-list></app-result-list>
 </div>

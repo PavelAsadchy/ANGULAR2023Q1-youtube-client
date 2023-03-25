@@ -9,13 +9,11 @@
   &__search {
     width: 100%;
     max-width: 570px;
-    // position: absolute;
-    // left: 50%;
-    // transform: translateX(-50%);
   }
 
   &__user {
     position: absolute;
-    right: 0;
+    top: 26px;
+    right: 30px;
   }
 }
