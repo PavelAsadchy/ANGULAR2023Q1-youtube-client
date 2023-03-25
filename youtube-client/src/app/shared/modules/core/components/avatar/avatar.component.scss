@@ -1,0 +1,13 @@
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    color: var(--light);
+    background-color: var(--primary);
+  }
+}

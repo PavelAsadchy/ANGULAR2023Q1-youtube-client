@@ -19,6 +19,7 @@
     flex-grow: 1;
     border: none;
     background-color: var(--bg-secondary);
+    outline: none;
   }
 
   button {
@@ -28,6 +29,7 @@
     color: var(--light);
     background-color: var(--primary);
     border: none;
+    cursor: pointer;
   }
 
   &__btn {
@@ -38,6 +40,8 @@
   }
 
   &__settings {
+    width: 24px;
+    padding: 4px;
     border-radius: 5px;
   }
 
