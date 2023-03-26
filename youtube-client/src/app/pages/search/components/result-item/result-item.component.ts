@@ -10,7 +10,7 @@ export class ResultItemComponent implements OnInit {
   @Input()
   item!: YoutubeItem;
   // @Output()
-  // datesLag!: number; 
+  // datesLag!: number;
   // publishedAt!: Date;
 
   ngOnInit(): void {

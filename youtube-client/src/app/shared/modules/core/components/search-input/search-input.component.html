@@ -31,9 +31,9 @@
     </span>
 
     <button
-      *ngFor="let sortOption of sortByMode | keyvalue"
+      *ngFor="let sortOption of sortingModeService.sortingMode | keyvalue"
       class="button _blank search-input__sort-btn"
-      (click)="sortBySelect(sortOption.key)">
+      (click)="sortingModeService.sortingModeSelect(sortOption.key)">
       {{ sortOption.value.label }}
 
       <mat-icon *ngIf="sortOption.value.isUp; else down">keyboard_arrow_up</mat-icon>
@@ -50,6 +50,6 @@
       id="resultsSearch"
       type="search"
       class="search-input__search-results"
-      [(ngModel)]="resultsSearch">
+      [(ngModel)]="sortingModeService.resultsSearch">
   </div>
 </div>

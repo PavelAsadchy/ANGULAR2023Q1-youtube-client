@@ -1,5 +1,10 @@
 <ul class="result-list">
-  <li *ngFor="let item of resultList">
+  <li
+    *ngFor="let item of resultList
+      | sortByDate:sortingModeService.sortingMode.date.isModeOn:sortingModeService.sortingMode.date.isUp
+      | sortByViews:sortingModeService.sortingMode.viewsCount.isModeOn:sortingModeService.sortingMode.viewsCount.isUp
+      | searchByString:sortingModeService.resultsSearch"
+  >
     <app-result-item [item]="item"></app-result-item>
   </li>
 </ul>

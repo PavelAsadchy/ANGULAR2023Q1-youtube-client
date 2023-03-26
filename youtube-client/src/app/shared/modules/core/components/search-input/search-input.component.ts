@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { SortBy } from 'src/app/shared/models/sort-by.model';
+import { SortingModeService } from 'src/app/shared/services/sorting-mode.service';
 
 @Component({
   selector: 'app-search-input',
@@ -7,21 +7,10 @@ import { SortBy } from 'src/app/shared/models/sort-by.model';
   styleUrls: ['./search-input.component.scss'],
 })
 export class SearchInputComponent {
+  constructor(public sortingModeService: SortingModeService) {}
+
   searchInput = '';
   settingsEnabled = true;
-  resultsSearch = '';
-  sortByMode: SortBy = {
-    date: {
-      label: 'date',
-      isModeOn: false,
-      isUp: false,
-    },
-    viewsCount: {
-      label: 'count of views',
-      isModeOn: false,
-      isUp: false,
-    },
-  };
 
   @Output()
   resultListEnabled = new EventEmitter<boolean>();
@@ -32,16 +21,5 @@ export class SearchInputComponent {
 
   toggleSettings(): void {
     this.settingsEnabled = !this.settingsEnabled;
-  }
-
-  sortBySelect(option: keyof SortBy): void {
-    for (let key in this.sortByMode) {
-      if (key === option) {
-        this.sortByMode[key].isModeOn = true;
-        this.sortByMode[key].isUp = !this.sortByMode[key].isUp
-      } else {
-        this.sortByMode[key as keyof SortBy].isModeOn = false;
-      }
-    }
   }
 }
