@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth {
+  padding: 28px 20px 26px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-secondary);
+  border-radius: 16px;
+
+  &__legend {
+    margin-bottom: 12px;
+    color: var(--dark);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+
+  &__submit {
+    display: block;
+    margin-left: auto;
+  }
+}

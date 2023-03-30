@@ -5,6 +5,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './container/auth.component';
 import { AuthFormComponent } from './components/auth-form/auth-form.component';
 import { FormInputComponent } from './components/form-input/form-input.component';
+import { SharedModule } from 'src/app/shared/modules/shared/shared.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { FormInputComponent } from './components/form-input/form-input.component
   ],
   imports: [
     CommonModule,
+    SharedModule,
     AuthRoutingModule,
   ],
 })

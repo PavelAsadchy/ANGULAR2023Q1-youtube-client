@@ -1,1 +1,41 @@
-<p>auth works!</p>
+<form
+  class="auth"
+  [formGroup]="loginForm"
+  (ngSubmit)="onSubmit()"
+>
+  <legend class="auth__legend">
+    Create new card
+  </legend>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Login</mat-label>
+    <input matInput
+      type="text"
+      placeholder="Enter login"
+      formControlName="login"
+    >
+    <mat-icon matSuffix>person</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input matInput
+      type="password"
+      placeholder="Enter password"
+      formControlName="password"
+    >
+    <mat-icon matSuffix>vpn_key</mat-icon>
+  </mat-form-field>
+
+  <div>
+    <button
+      mat-raised-button
+      color="primary"
+      class="auth__submit"
+      [disabled]="loginForm.invalid"
+      type="submit"
+    >
+      Login
+    </button>
+  </div>
+</form>
