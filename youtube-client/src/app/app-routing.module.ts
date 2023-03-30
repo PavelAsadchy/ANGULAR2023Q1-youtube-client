@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CardComponent } from './pages/card/container/card.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 
@@ -21,6 +22,10 @@ const routes: Routes = [
       import('src/app/pages/search/search.module')
       .then(m => m.SearchModule),
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'search/:id',
+    component: CardComponent,
   },
   {
     path: '**',

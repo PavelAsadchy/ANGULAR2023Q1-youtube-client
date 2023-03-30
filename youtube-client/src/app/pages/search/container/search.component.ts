@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SearchService } from 'src/app/shared/services/search.service';
 
 @Component({
   selector: 'app-search',
@@ -6,9 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
-  resultListEnabled = false;
-
-  enableResultList(isEnabled: boolean) {
-    this.resultListEnabled = isEnabled;
-  }
+  constructor(public searchService: SearchService) { }
 }

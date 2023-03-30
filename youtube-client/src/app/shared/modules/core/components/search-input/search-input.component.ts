@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import { SearchService } from 'src/app/shared/services/search.service';
 import { SortingModeService } from 'src/app/shared/services/sorting-mode.service';
 
 @Component({
@@ -7,16 +8,16 @@ import { SortingModeService } from 'src/app/shared/services/sorting-mode.service
   styleUrls: ['./search-input.component.scss'],
 })
 export class SearchInputComponent {
-  constructor(public sortingModeService: SortingModeService) {}
+  constructor(
+    public sortingModeService: SortingModeService,
+    public searchService: SearchService,
+  ) {}
 
   searchInput = '';
-  settingsEnabled = true;
-
-  @Output()
-  resultListEnabled = new EventEmitter<boolean>();
+  settingsEnabled = false;
 
   enableResultList(): void {
-    this.resultListEnabled.emit(true);
+    this.searchService.enableResultList(true);
   }
 
   toggleSettings(): void {

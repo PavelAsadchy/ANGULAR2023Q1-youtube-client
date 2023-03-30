@@ -1,5 +1,3 @@
-<app-header (resultListEnabled)="enableResultList($event)"></app-header>
-
-<div *ngIf="resultListEnabled" class="search__content">
+<div *ngIf="searchService.resultListEnabled" class="search__content">
   <app-result-list></app-result-list>
 </div>
