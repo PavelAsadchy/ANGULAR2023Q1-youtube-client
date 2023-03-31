@@ -8,5 +8,12 @@
 
   <h3 class="result-item__title">{{ item.snippet.title }}</h3>
 
-  <button class="result-item__link">more...</button>
+  <button
+    mat-raised-button
+    color="primary"
+    class="result-item__link"
+    (click)="selectItem()"
+  >
+    more...
+  </button>
 </div>

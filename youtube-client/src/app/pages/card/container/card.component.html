@@ -1,1 +1,40 @@
-<div class="card">Card</div>
+<mat-card class="card">
+  <mat-icon
+    class="card__return"
+    (click)="returnToSearchResults()"
+  >
+    keyboard_arrow_left
+  </mat-icon>
+
+  <div class="card__preview">
+    <img
+      class="card__preview-img"
+      src="{{ selectedItemService.selected?.snippet?.thumbnails?.maxres
+        ? selectedItemService.selected?.snippet?.thumbnails?.maxres?.url
+        : selectedItemService.selected?.snippet?.thumbnails?.high?.url
+      }}"
+      alt="{{ selectedItemService.selected?.snippet?.title }} || preview_img"
+    >
+  </div>
+
+  <div class="card__details">
+    <div class="card__header">
+      <mat-card-title>
+        {{ selectedItemService.selected?.snippet?.title }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{ selectedItemService.selected?.snippet?.publishedAt | date: "fullDate" }}
+      </mat-card-subtitle>
+    </div>
+
+    <p class="card__description-label">Description:</p>
+    <p class="card__description-text">
+      {{ selectedItemService.selected?.snippet?.description }}
+    </p>
+
+    <app-statistics
+      class="card__stats"
+      [stats]="selectedItemService.selected!.statistics"
+    ></app-statistics>
+  </div>
+</mat-card>

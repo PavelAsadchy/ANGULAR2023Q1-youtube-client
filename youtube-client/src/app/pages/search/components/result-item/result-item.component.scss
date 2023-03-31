@@ -28,15 +28,6 @@
   }
 
   &__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: auto;
-    padding: 6px 30px;
-    color: var(--light);
-    background-color: var(--primary);
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
   }
 }

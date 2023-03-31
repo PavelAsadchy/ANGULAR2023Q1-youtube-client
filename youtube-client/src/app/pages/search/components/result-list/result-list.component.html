@@ -5,6 +5,9 @@
       | sortByViews:sortingModeService.sortingMode.viewsCount.isModeOn:sortingModeService.sortingMode.viewsCount.isUp
       | searchByString:sortingModeService.resultsSearch"
   >
-    <app-result-item [item]="item"></app-result-item>
+    <app-result-item
+      [item]="item"
+      (selectedItem)="selectItem($event)"
+    ></app-result-item>
   </li>
 </ul>

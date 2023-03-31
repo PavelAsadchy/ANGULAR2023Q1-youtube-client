@@ -6,7 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -26,6 +26,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     StatisticsComponent,
     MatButtonModule,
+    MatCardModule,
   ],
 })
 export class SharedModule { }
