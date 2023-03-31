@@ -7,10 +7,12 @@ import { MatInputModule } from '@angular/material/input';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { SearchItemBorderBottomColorDirective } from 'src/app/shared/directives/searchItemBorderBottomColor.directive';
 
 @NgModule({
   declarations: [
     StatisticsComponent,
+    SearchItemBorderBottomColorDirective,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import { MatCardModule } from '@angular/material/card';
     StatisticsComponent,
     MatButtonModule,
     MatCardModule,
+    SearchItemBorderBottomColorDirective,
   ],
 })
 export class SharedModule { }

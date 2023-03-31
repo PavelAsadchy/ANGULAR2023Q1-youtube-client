@@ -1,8 +1,8 @@
 import { Directive, ElementRef, Renderer2, Input, OnInit } from '@angular/core';
-import { DATES_LAG_VALUE, DATES_LAG_COLOR } from '../consts/dates-lag.const';
+import { DATES_LAG_VALUE, DATES_LAG_COLOR } from '../../pages/search/consts/dates-lag.const';
 
 @Directive({
-    selector: '[searchItemBorderBottomColor]'
+  selector: '[searchItemBorderBottomColor]'
 })
 export class SearchItemBorderBottomColorDirective implements OnInit {
 
@@ -12,7 +12,8 @@ export class SearchItemBorderBottomColorDirective implements OnInit {
   ) {}
 
   @Input()
-  datesLag!: number;
+  monthsLag!: number;
+
   borderBottomColor!: string;
 
   ngOnInit(): void {
@@ -26,13 +27,13 @@ export class SearchItemBorderBottomColorDirective implements OnInit {
 
   setBorderBottomColor(): void {
     switch (true) {
-      case (this.datesLag < DATES_LAG_VALUE.min):
+      case (this.monthsLag < DATES_LAG_VALUE.min):
         this.borderBottomColor = DATES_LAG_COLOR.min;
         break;
-      case (this.datesLag < DATES_LAG_VALUE.medium):
+      case (this.monthsLag < DATES_LAG_VALUE.medium):
         this.borderBottomColor = DATES_LAG_COLOR.medium;
         break;
-      case (this.datesLag < DATES_LAG_VALUE.max):
+      case (this.monthsLag < DATES_LAG_VALUE.max):
         this.borderBottomColor = DATES_LAG_COLOR.max;
         break;
       default:

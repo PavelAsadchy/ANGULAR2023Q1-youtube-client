@@ -7,7 +7,6 @@ import { ResultListComponent } from './components/result-list/result-list.compon
 import { ResultItemComponent } from './components/result-item/result-item.component';
 import { CoreModule } from 'src/app/shared/modules/core/core.module';
 import { SharedModule } from 'src/app/shared/modules/shared/shared.module';
-import { SearchItemBorderBottomColorDirective } from './directives/searchItemBorderBottomColor.directive';
 import { SortByDatePipe } from './pipes/sort-by-date.pipe';
 import { SortByViewsPipe } from './pipes/sort-by-views.pipe';
 import { SearchByStringPipe } from './pipes/search-by-string.pipe';
@@ -18,7 +17,6 @@ import { SearchByStringPipe } from './pipes/search-by-string.pipe';
     SearchComponent,
     ResultListComponent,
     ResultItemComponent,
-    SearchItemBorderBottomColorDirective,
     SortByDatePipe,
     SortByViewsPipe,
     SearchByStringPipe,
