@@ -14,6 +14,7 @@
       placeholder="Enter login"
       formControlName="login"
     >
+    <mat-error *ngIf="isFormControlValid('login')">{{getErrorMessage('login')}}</mat-error>
     <mat-icon matSuffix>person</mat-icon>
   </mat-form-field>
 
@@ -24,6 +25,7 @@
       placeholder="Enter password"
       formControlName="password"
     >
+    <mat-error *ngIf="isFormControlValid('password')">{{getErrorMessage('password')}}</mat-error>
     <mat-icon matSuffix>vpn_key</mat-icon>
   </mat-form-field>
 
