@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { NavigateService } from 'src/app/shared/services/navigate.service';
 import { SelectedItemService } from 'src/app/shared/services/selected-item.service';
 import { GetMonthLag } from 'src/app/shared/utils/get-month-lag';
@@ -11,7 +11,8 @@ import { GetMonthLag } from 'src/app/shared/utils/get-month-lag';
 export class CardComponent {
   constructor(
     public selectedItemService: SelectedItemService,
-    private navigateService: NavigateService
+    private navigateService: NavigateService,
+    private cdr: ChangeDetectorRef,
   ) { }
 
   monthsLag!: number;
@@ -22,6 +23,15 @@ export class CardComponent {
         new Date(this.selectedItemService.selected?.snippet.publishedAt)
       );
     }
+  }
+
+  /*
+  'searchItemBorderBottomColor' value changes after change detection has completed,
+  it throws 'ExpressionChangedAfterItHasBeenCheckedError' error in development mode.
+  Solution in this case is to manually trigger change detection for the current component.
+  */
+  ngAfterViewInit() {
+    this.cdr.detectChanges();
   }
 
   returnToSearchResults(): void {

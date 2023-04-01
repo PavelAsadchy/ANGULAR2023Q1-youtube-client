@@ -1,16 +1,11 @@
-import { Directive, ElementRef, Renderer2, Input, OnInit } from '@angular/core';
+import { Directive, Input, OnInit } from '@angular/core';
 import { DATES_LAG_VALUE, DATES_LAG_COLOR } from '../../pages/search/consts/dates-lag.const';
 
 @Directive({
-  selector: '[searchItemBorderBottomColor]'
+  selector: '[searchItemBorderBottomColor]',
+  exportAs: 'monthsLagColor'
 })
 export class SearchItemBorderBottomColorDirective implements OnInit {
-
-  constructor(
-    private elementRef: ElementRef,
-    private renderer2: Renderer2
-  ) {}
-
   @Input()
   monthsLag!: number;
 
@@ -18,11 +13,6 @@ export class SearchItemBorderBottomColorDirective implements OnInit {
 
   ngOnInit(): void {
     this.setBorderBottomColor();
-    this.renderer2.setStyle(
-      this.elementRef.nativeElement,
-      'border-bottom',
-      `5px solid ${this.borderBottomColor}`
-    );
   }
 
   setBorderBottomColor(): void {

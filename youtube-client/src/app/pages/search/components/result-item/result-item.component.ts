@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { YoutubeItem } from 'src/app/shared/models/youtube-item.model';
 import { GetMonthLag } from 'src/app/shared/utils/get-month-lag';
 
@@ -9,6 +9,8 @@ import { GetMonthLag } from 'src/app/shared/utils/get-month-lag';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ResultItemComponent implements OnInit {
+  constructor (private cdr: ChangeDetectorRef) { }
+
   @Input()
   item!: YoutubeItem;
 
@@ -21,6 +23,15 @@ export class ResultItemComponent implements OnInit {
     this.monthsLag = GetMonthLag.countValue(
       new Date(this.item.snippet.publishedAt)
     );
+  }
+
+  /*
+  'searchItemBorderBottomColor' value changes after change detection has completed,
+  it throws 'ExpressionChangedAfterItHasBeenCheckedError' error in development mode.
+  Solution in this case is to manually trigger change detection for the current component.
+  */
+  ngAfterViewInit() {
+    this.cdr.detectChanges();
   }
 
   selectItem(): void {

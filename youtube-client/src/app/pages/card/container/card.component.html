@@ -2,6 +2,8 @@
   class="card"
   searchItemBorderBottomColor
   [monthsLag]="monthsLag"
+  #lagColor="monthsLagColor"
+  [style.--border-bottom-color]="lagColor.borderBottomColor"
 >
   <mat-icon
     class="card__return"

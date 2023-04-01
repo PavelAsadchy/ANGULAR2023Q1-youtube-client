@@ -2,6 +2,8 @@
   class="result-item"
   searchItemBorderBottomColor
   [monthsLag]="monthsLag"
+  #lagColor="monthsLagColor"
+  [style.--border-bottom-color]="lagColor.borderBottomColor"
 >
   <img class="result-item__preview" src="{{ item.snippet.thumbnails.maxres?.url }}" >
 

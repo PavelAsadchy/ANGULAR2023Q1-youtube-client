@@ -6,11 +6,15 @@
 .card {
   width: 100%;
   flex-direction: row;
+  border-bottom: 5px solid var(--border-bottom-color, transparent);
 
   &__return {
     position: absolute;
     top: 0;
     right: 100%;
+    color: var(--light);
+    background-color: var(--border-bottom-color, transparent);
+    border-radius: 5px 0px 0px 5px;
     cursor: pointer;
   }
 
