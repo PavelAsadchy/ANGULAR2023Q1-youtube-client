@@ -3,7 +3,7 @@
   searchItemBorderBottomColor
   [monthsLag]="monthsLag"
   #lagColor="monthsLagColor"
-  [style.--border-bottom-color]="lagColor.borderBottomColor"
+  [style.--lag-color]="lagColor.value"
 >
   <mat-icon
     class="card__return"
@@ -33,10 +33,12 @@
       </mat-card-subtitle>
     </div>
 
-    <p class="card__description-label">Description:</p>
-    <p class="card__description-text">
-      {{ selectedItemService.selected?.snippet?.description }}
-    </p>
+    <div class="card__description">
+      <p class="card__description-label">Description:</p>
+      <p class="card__description-text">
+        {{ selectedItemService.selected?.snippet?.description }}
+      </p>
+    </div>
 
     <app-statistics
       class="card__stats"

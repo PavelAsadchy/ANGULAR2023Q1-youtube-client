@@ -3,7 +3,7 @@
   searchItemBorderBottomColor
   [monthsLag]="monthsLag"
   #lagColor="monthsLagColor"
-  [style.--border-bottom-color]="lagColor.borderBottomColor"
+  [style.--lag-color]="lagColor.value"
 >
   <img class="result-item__preview" src="{{ item.snippet.thumbnails.maxres?.url }}" >
 

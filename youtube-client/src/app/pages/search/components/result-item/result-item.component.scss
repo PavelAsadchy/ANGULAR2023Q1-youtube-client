@@ -7,7 +7,7 @@
   align-items: center;
   background-color: var(--bg-primary);
   border-radius: 5px;
-  border-bottom: 5px solid var(--border-bottom-color, transparent);
+  border-bottom: 5px solid rgb(var(--lag-color));
 
   &__preview {
     max-width: 100%;
