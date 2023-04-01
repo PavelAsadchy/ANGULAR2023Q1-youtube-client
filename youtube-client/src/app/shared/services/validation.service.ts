@@ -63,9 +63,19 @@ export class ValidationService {
   }
 
   static passwordValidator(control: FormControl) {
-    // {6,100}           - Assert password is between 6 and 100 characters
-    // (?=.*[0-9])       - Assert a string has at least one number
-    if (control.value.match(/^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{6,100}$/)) {
+    // - length greater than or equal to 8
+    // - contains one or more uppercase characters
+    // - contains one or more lowercase characters
+    // - contains one or more numeric values
+    // - contains one or more special characters
+    if (
+      control.value.match(
+        /(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/
+        // {6,100}           - Assert password is between 6 and 100 characters
+        // (?=.*[0-9])       - Assert a string has at least one number
+        // /^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{8,100}$/
+      )
+    ) {
       return null;
     } else {
       return { invalidPassword: true };

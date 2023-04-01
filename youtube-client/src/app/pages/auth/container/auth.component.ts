@@ -22,7 +22,11 @@ export class AuthComponent {
       validators: [Validators.required, Validators.email]
     }],
     password: ['', {
-      validators: [Validators.required, Validators.minLength(8)]
+      validators: [
+        Validators.required,
+        Validators.minLength(8),
+        ValidationService.passwordValidator,
+      ]
     }],
   });
 
