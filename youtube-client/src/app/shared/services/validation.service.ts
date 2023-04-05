@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ValidatorError, ValidatorErrorConfig } from '../models/validation-service.model';
+import { GetValidatorErrMessage } from '../utils/get-validator-err-msg';
 
 @Injectable({
   providedIn: 'root'
@@ -18,20 +20,16 @@ export class ValidationService {
   static getValidatorErrorMessage(
     form: FormGroup,
     controlName: string,
-  ): string {
+  ): ValidatorError | null {
     const control = form.get(controlName);
-    if (!control || !control.touched || !control.errors) return '';
+    if (!control || !control.touched || !control.errors) return null;
   
     const validationPropertyName = Object.keys(control.errors)[0];
-    const config: { [key: string]: string } = {
-      required: `Please enter ${controlName}`,
-      email: 'The login email is invalid',
-      invalidCreditCard: 'Is invalid credit card number',
-      invalidEmailAddress: 'Invalid email address',
-      invalidPassword:
-        'Invalid password. Password must be at least 6 characters long, and contain a number.',
-      minlength: `Minimum length ${control.errors['minlength']?.requiredLength}`,
-    };
+    const config: ValidatorErrorConfig = 
+      GetValidatorErrMessage.createConfig(
+        controlName,
+        control.errors['minlength']?.requiredLength,
+      );
 
     return config[validationPropertyName];
   }

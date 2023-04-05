@@ -8,6 +8,7 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { SearchItemBorderBottomColorDirective } from 'src/app/shared/directives/searchItemBorderBottomColor.directive';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SearchItemBorderBottomColorDirective } from 'src/app/shared/directives/
     MatButtonModule,
     MatCardModule,
     SearchItemBorderBottomColorDirective,
+    MatTooltipModule,
   ],
 })
 export class SharedModule { }
