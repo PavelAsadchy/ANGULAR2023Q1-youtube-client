@@ -28,7 +28,7 @@ export class ValidationService {
     const config: ValidatorErrorConfig = 
       GetValidatorErrMessage.createConfig(
         controlName,
-        control.errors['minlength']?.requiredLength,
+        control.errors['minlength']?.requiredLength || control.errors['maxlength']?.requiredLength,
       );
 
     return config[validationPropertyName];
@@ -77,6 +77,21 @@ export class ValidationService {
       return null;
     } else {
       return { invalidPassword: true };
+    }
+  }
+
+  static urlValidator(control: FormControl) {
+    if (
+      control.value.match(
+        // includes urls with query params
+        // copied from angularjs source code
+        // (https://github.com/angular/angular.js/commit/ffb6b2fb56d9ffcb051284965dd538629ea9687a)
+        /^[A-Za-z][A-Za-z\d.+-]*:\/*(?:\w+(?::\w+)?@)?[^\s/]+(?::\d+)?(?:\/[\w#!:.?+=&%@\-/]*)?$/
+      )
+    ) {
+      return null;
+    } else {
+      return { invalidUrl: true };
     }
   }
 }

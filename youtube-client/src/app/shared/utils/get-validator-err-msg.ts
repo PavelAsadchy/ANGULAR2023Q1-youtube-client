@@ -25,6 +25,12 @@ export class GetValidatorErrMessage {
       minlength: {
         message: `Minimum length ${requiredLength}`,
       },
+      maxlength: {
+        message: `Maximum length ${requiredLength}`,
+      },
+      invalidUrl: {
+        message: `The ${controlName} link is invalid`,
+      }
     }
   }
 }

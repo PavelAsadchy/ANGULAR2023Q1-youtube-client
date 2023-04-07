@@ -19,14 +19,14 @@ export class AuthComponent {
 
   loginForm = this.fb.group({
     login: ['', {
-      validators: [Validators.required, Validators.email]
+      validators: [Validators.required, Validators.email],
     }],
     password: ['', {
       validators: [
         Validators.required,
         Validators.minLength(8),
         ValidationService.passwordValidator,
-      ]
+      ],
     }],
   });
 

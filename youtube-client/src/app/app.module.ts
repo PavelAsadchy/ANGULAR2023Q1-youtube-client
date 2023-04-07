@@ -10,6 +10,7 @@ import { SharedModule } from './shared/modules/shared/shared.module';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CoreModule } from './shared/modules/core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminModule } from './pages/admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CardModule,
     CoreModule,
     BrowserAnimationsModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

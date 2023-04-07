@@ -4,7 +4,7 @@
   (ngSubmit)="onSubmit()"
 >
   <legend class="auth__legend">
-    Create new card
+    Login
   </legend>
 
   <mat-form-field appearance="outline">
@@ -14,10 +14,11 @@
       placeholder="Enter login"
       formControlName="login"
     >
+    <mat-icon matSuffix>person</mat-icon>
+
     <mat-error *ngIf="isFormControlValid('login')">
       {{ getErrorMessage('login')?.message }}
     </mat-error>
-    <mat-icon matSuffix>person</mat-icon>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
@@ -27,6 +28,8 @@
       placeholder="Enter password"
       formControlName="password"
     >
+    <mat-icon matSuffix>vpn_key</mat-icon>
+
     <mat-error *ngIf="isFormControlValid('password')">
       {{ getErrorMessage('password')?.message }}
       <mat-icon
@@ -36,8 +39,6 @@
         help
       </mat-icon>
     </mat-error>
-    
-    <mat-icon matSuffix>vpn_key</mat-icon>
   </mat-form-field>
 
   <div>

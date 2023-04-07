@@ -4,6 +4,7 @@ import { CardComponent } from './pages/card/container/card.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { ProceedToCardGuard } from './shared/guards/proceed-to-card.guard';
+import { AdminComponent } from './pages/admin/container/admin.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,11 @@ const routes: Routes = [
     path: 'search/:id',
     component: CardComponent,
     canActivate: [ProceedToCardGuard],
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '**',
