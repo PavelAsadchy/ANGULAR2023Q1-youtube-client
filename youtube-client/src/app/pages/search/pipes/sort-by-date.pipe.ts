@@ -1,8 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { YoutubeItem } from 'src/app/shared/models/youtube-item.model';
+import { YoutubeItem } from '../../../shared/models/youtube-item.model';
 
 @Pipe({
-  name: 'sortByDate'
+  name: 'sortByDate',
 })
 export class SortByDatePipe implements PipeTransform {
 

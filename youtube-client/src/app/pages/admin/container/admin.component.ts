@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ValidationService } from 'src/app/shared/services/validation.service';
+import { ValidationService } from '../../../shared/services/validation.service';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+  styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent {
   constructor(private fb: FormBuilder) { }
@@ -18,7 +18,7 @@ export class AdminComponent {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(20),
-      ]
+      ],
     }],
     description: ['', {
       validators: [Validators.maxLength(255)],
@@ -47,14 +47,14 @@ export class AdminComponent {
   isFormControlValid(controlName: string): boolean {
     return ValidationService.isFormControlValid(
       this.newCardForm,
-      controlName
+      controlName,
     );
   }
 
   getErrorMessage(controlName: string) {
     return ValidationService.getValidatorErrorMessage(
       this.newCardForm,
-      controlName
+      controlName,
     );
   }
 }

@@ -1,13 +1,13 @@
 import { Directive, Input, OnInit } from '@angular/core';
-import { DATES_LAG_VALUE, DATES_LAG_COLOR_RGB } from '../../pages/search/consts/dates-lag.const';
+import { DatesLagValue, DatesLagColorRgb } from '../../pages/search/consts/dates-lag.const';
 
 @Directive({
-  selector: '[searchItemBorderBottomColor]',
-  exportAs: 'monthsLagColor'
+  selector: '[appSearchItemBorderBottomColor]',
+  exportAs: 'monthsLagColor',
 })
 export class SearchItemBorderBottomColorDirective implements OnInit {
   @Input()
-  monthsLag!: number;
+    monthsLag!: number;
 
   value!: string;
 
@@ -17,17 +17,17 @@ export class SearchItemBorderBottomColorDirective implements OnInit {
 
   setBorderBottomColor(): void {
     switch (true) {
-      case (this.monthsLag < DATES_LAG_VALUE.min):
-        this.value = DATES_LAG_COLOR_RGB.min;
+      case (this.monthsLag < DatesLagValue.min):
+        this.value = DatesLagColorRgb.min;
         break;
-      case (this.monthsLag < DATES_LAG_VALUE.medium):
-        this.value = DATES_LAG_COLOR_RGB.medium;
+      case (this.monthsLag < DatesLagValue.medium):
+        this.value = DatesLagColorRgb.medium;
         break;
-      case (this.monthsLag < DATES_LAG_VALUE.max):
-        this.value = DATES_LAG_COLOR_RGB.max;
+      case (this.monthsLag < DatesLagValue.max):
+        this.value = DatesLagColorRgb.max;
         break;
       default:
-        this.value = DATES_LAG_COLOR_RGB.default;
+        this.value = DatesLagColorRgb.default;
     }
   }
 }

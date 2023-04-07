@@ -7,10 +7,11 @@ import { MatInputModule } from '@angular/material/input';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { SearchItemBorderBottomColorDirective } from 'src/app/shared/directives/searchItemBorderBottomColor.directive';
+import { SearchItemBorderBottomColorDirective } from '../../directives/searchItemBorderBottomColor.directive';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { MatNativeDateModule } from '@angular/material/core';
   imports: [
     CommonModule,
     MatIconModule,
-    MatFormFieldModule
+    MatFormFieldModule,
   ],
   exports: [
     CommonModule,

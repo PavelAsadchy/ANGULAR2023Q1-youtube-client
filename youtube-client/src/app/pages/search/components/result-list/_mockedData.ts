@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { YoutubeItem } from "src/app/shared/models/youtube-item.model";
 
 export const _mockedData: YoutubeItem[] = [

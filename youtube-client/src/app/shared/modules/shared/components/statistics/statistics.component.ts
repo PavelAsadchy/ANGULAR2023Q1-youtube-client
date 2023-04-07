@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { YoutubeItemStatistics } from 'src/app/shared/models/youtube-item.model';
+import { YoutubeItemStatistics } from '../../../../models/youtube-item.model';
 
 @Component({
   selector: 'app-statistics',
@@ -9,5 +9,5 @@ import { YoutubeItemStatistics } from 'src/app/shared/models/youtube-item.model'
 })
 export class StatisticsComponent {
   @Input()
-  stats!: YoutubeItemStatistics;
+    stats!: YoutubeItemStatistics;
 }

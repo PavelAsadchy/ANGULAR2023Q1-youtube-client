@@ -15,14 +15,14 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () =>
-      import('src/app/pages/auth/auth.module')
-      .then(m => m.AuthModule),
+      import('./pages/auth/auth.module')
+        .then(m => m.AuthModule),
   },
   {
     path: 'search',
     loadChildren: () =>
-      import('src/app/pages/search/search.module')
-      .then(m => m.SearchModule),
+      import('./pages/search/search.module')
+        .then(m => m.SearchModule),
     canActivate: [AuthGuard],
   },
   {
@@ -39,7 +39,7 @@ const routes: Routes = [
     path: '**',
     component: NotFoundComponent,
     canActivate: [AuthGuard],
-  }
+  },
 ];
 
 @NgModule({

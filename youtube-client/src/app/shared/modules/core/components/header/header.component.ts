@@ -7,7 +7,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   @Output()
-  resultListEnabled = new EventEmitter<boolean>();
+    resultListEnabled = new EventEmitter<boolean>();
 
   enableResultList(isEnabled: boolean): void {
     this.resultListEnabled.emit(isEnabled);

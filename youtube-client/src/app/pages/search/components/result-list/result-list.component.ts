@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { YoutubeItem } from 'src/app/shared/models/youtube-item.model';
-import { SortingModeService } from 'src/app/shared/services/sorting-mode.service';
+import { YoutubeItem } from '../../../../shared/models/youtube-item.model';
+import { SortingModeService } from '../../../../shared/services/sorting-mode.service';
 import { _mockedData } from './_mockedData';
-import { NavigateService } from 'src/app/shared/services/navigate.service';
-import { SelectedItemService } from 'src/app/shared/services/selected-item.service';
+import { NavigateService } from '../../../../shared/services/navigate.service';
+import { SelectedItemService } from '../../../../shared/services/selected-item.service';
 
 @Component({
   selector: 'app-result-list',

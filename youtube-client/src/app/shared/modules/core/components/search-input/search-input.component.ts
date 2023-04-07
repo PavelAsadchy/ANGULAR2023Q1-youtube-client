@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SearchService } from 'src/app/shared/services/search.service';
-import { SortingModeService } from 'src/app/shared/services/sorting-mode.service';
+import { SearchService } from '../../../../../shared/services/search.service';
+import { SortingModeService } from '../../../../../shared/services/sorting-mode.service';
 
 @Component({
   selector: 'app-search-input',
@@ -14,6 +14,7 @@ export class SearchInputComponent {
   ) {}
 
   searchInput = '';
+
   settingsEnabled = false;
 
   enableResultList(): void {

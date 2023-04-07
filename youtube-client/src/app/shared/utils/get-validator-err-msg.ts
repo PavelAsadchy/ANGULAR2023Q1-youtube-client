@@ -1,4 +1,4 @@
-import { ValidatorErrorConfig } from "../models/validation-service.model";
+import { ValidatorErrorConfig } from '../models/validation-service.model';
 
 export class GetValidatorErrMessage {
   static createConfig(
@@ -30,7 +30,7 @@ export class GetValidatorErrMessage {
       },
       invalidUrl: {
         message: `The ${controlName} link is invalid`,
-      }
-    }
+      },
+    };
   }
 }

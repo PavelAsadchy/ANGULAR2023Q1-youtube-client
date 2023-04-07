@@ -4,7 +4,7 @@ import { ValidatorError, ValidatorErrorConfig } from '../models/validation-servi
 import { GetValidatorErrMessage } from '../utils/get-validator-err-msg';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ValidationService {
   static isFormControlValid(
@@ -38,7 +38,7 @@ export class ValidationService {
     // Visa, MasterCard, American Express, Diners Club, Discover, JCB
     if (
       control.value.match(
-        /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/
+        /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/,
       )
     ) {
       return null;
@@ -51,7 +51,7 @@ export class ValidationService {
     // RFC 2822 compliant regex
     if (
       control.value.match(
-        /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+        /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
       )
     ) {
       return null;
@@ -68,7 +68,7 @@ export class ValidationService {
     // - contains one or more special characters
     if (
       control.value.match(
-        /(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/
+        /(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
         // {6,100}           - Assert password is between 6 and 100 characters
         // (?=.*[0-9])       - Assert a string has at least one number
         // /^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{8,100}$/
@@ -86,7 +86,7 @@ export class ValidationService {
         // includes urls with query params
         // copied from angularjs source code
         // (https://github.com/angular/angular.js/commit/ffb6b2fb56d9ffcb051284965dd538629ea9687a)
-        /^[A-Za-z][A-Za-z\d.+-]*:\/*(?:\w+(?::\w+)?@)?[^\s/]+(?::\d+)?(?:\/[\w#!:.?+=&%@\-/]*)?$/
+        /^[A-Za-z][A-Za-z\d.+-]*:\/*(?:\w+(?::\w+)?@)?[^\s/]+(?::\d+)?(?:\/[\w#!:.?+=&%@\-/]*)?$/,
       )
     ) {
       return null;

@@ -5,7 +5,7 @@ import { AuthService } from '../services/auth.service';
 import { NavigateService } from '../services/navigate.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthGuard {
 
@@ -16,7 +16,7 @@ export class AuthGuard {
 
   canActivate(
     _route: ActivatedRouteSnapshot,
-    _state: RouterStateSnapshot
+    _state: RouterStateSnapshot,
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (this.authService.getAuthToken()) {
       return true;

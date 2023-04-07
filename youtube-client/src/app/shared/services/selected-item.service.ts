@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { YoutubeItem } from '../models/youtube-item.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SelectedItemService {
-  constructor() { }
 
   selected: YoutubeItem | null = null;
 

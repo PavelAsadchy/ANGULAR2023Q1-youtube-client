@@ -1,8 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { YoutubeItem } from 'src/app/shared/models/youtube-item.model';
+import { YoutubeItem } from '../../../shared/models/youtube-item.model';
 
 @Pipe({
-  name: 'sortByViews'
+  name: 'sortByViews',
 })
 export class SortByViewsPipe implements PipeTransform {
 
@@ -15,7 +15,7 @@ export class SortByViewsPipe implements PipeTransform {
       const sorted = [...searchResults].sort((a: YoutubeItem, b: YoutubeItem): number =>
         isSortDirectionIncreasing
           ? +a.statistics.viewCount - +b.statistics.viewCount
-          : +b.statistics.viewCount - +a.statistics.viewCount
+          : +b.statistics.viewCount - +a.statistics.viewCount,
       );
 
       return sorted;

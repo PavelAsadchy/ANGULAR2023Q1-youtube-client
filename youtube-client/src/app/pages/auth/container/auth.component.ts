@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { LoginFormValue } from 'src/app/shared/models/login-form-value.model';
-import { AuthService } from 'src/app/shared/services/auth.service';
-import { NavigateService } from 'src/app/shared/services/navigate.service';
-import { ValidationService } from 'src/app/shared/services/validation.service';
+import { LoginFormValue } from '../../../shared/models/login-form-value.model';
+import { AuthService } from '../../../shared/services/auth.service';
+import { NavigateService } from '../../../shared/services/navigate.service';
+import { ValidationService } from '../../../shared/services/validation.service';
 
 @Component({
   selector: 'app-auth',
@@ -32,7 +32,7 @@ export class AuthComponent {
 
   onSubmit(): void {
     this.authService.setAuthToken(
-      this.loginForm.value as LoginFormValue
+      this.loginForm.value as LoginFormValue,
     );
     this.navigateService.goTo(['/search']);
   }
@@ -40,14 +40,14 @@ export class AuthComponent {
   isFormControlValid(controlName: string): boolean {
     return ValidationService.isFormControlValid(
       this.loginForm,
-      controlName
+      controlName,
     );
   }
 
   getErrorMessage(controlName: string) {
     return ValidationService.getValidatorErrorMessage(
       this.loginForm,
-      controlName
+      controlName,
     );
   }
 }
