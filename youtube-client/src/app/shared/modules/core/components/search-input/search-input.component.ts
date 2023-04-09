@@ -31,7 +31,7 @@ export class SearchInputComponent implements AfterViewInit, OnDestroy {
         debounceTime(1000),
         distinctUntilChanged(),
         takeUntil(this.unsubscribeService.subscription),
-        switchMap((searchRequest: string) => this.searchService.getYoutubeData(searchRequest))
+        switchMap((searchRequest: string) => this.searchService.getYoutubeData(searchRequest)),
       )
       .subscribe((res: YoutubeItem[]) => this.searchService.serchResultList = res);
   }

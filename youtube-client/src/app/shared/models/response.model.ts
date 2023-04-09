@@ -13,15 +13,15 @@ export class YoutubeResponse {
   ) { }
 
   static fromJSON(json: any): YoutubeResponse | [] {
-    return Boolean(json)
+    return json
       ? new YoutubeResponse(
-          json.kind,
-          json.etag,
-          json.pageInfo,
-          json.items,
-          json.nextPageToken,
-          json.regionCode,
-        )
+        json.kind,
+        json.etag,
+        json.pageInfo,
+        json.items,
+        json.nextPageToken,
+        json.regionCode,
+      )
       : [];
   }
 
@@ -39,16 +39,17 @@ export class YoutubeResponseById {
     public kind: string,
     public etag: string,
     public pageInfo: PageInfo,
-    public items: YoutubeItem[]
+    public items: YoutubeItem[],
   ) {}
 
   static fromJSON(json: any): YoutubeResponseById | [] {
-    return Boolean(json)
+    return json
       ? new YoutubeResponseById(
         json.kind,
         json.etag,
         json.pageInfo,
-        json.items)
+        json.items,
+      )
       : [];
   }
 }

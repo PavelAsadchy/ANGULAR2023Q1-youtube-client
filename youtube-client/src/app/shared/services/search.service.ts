@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { YoutubeResponse, YoutubeResponseById } from '../models/response.model';
 import { YoutubeRequestHeaders } from '../consts';
@@ -31,8 +31,8 @@ export class SearchService {
               map((resp: any) => {
                 return resp.items;
               }),
-            )
-        )
+            ),
+        ),
       );
   }
   

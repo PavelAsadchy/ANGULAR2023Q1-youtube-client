@@ -6,11 +6,11 @@ import {
   HttpInterceptor,
   HttpParams,
   HttpErrorResponse,
-  HttpHeaders
+  HttpHeaders,
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../environments/environment';
 import { YOUTUBE_REQUEST_PARAMS, YoutubeRequestHeaders } from '../consts';
 import { ReqCloneParams } from '../models/request-params.model';
 
@@ -25,7 +25,7 @@ export class YoutubeInterceptor implements HttpInterceptor {
         catchError((error: HttpErrorResponse) => {
           // handle request errors
           return throwError(() => new Error(error.message));
-        })
+        }),
       );
   }
 
@@ -37,16 +37,16 @@ export class YoutubeInterceptor implements HttpInterceptor {
     };
 
     if (request.headers.has(YoutubeRequestHeaders.GET_DATA_BY_STRING)) {
-      reqCloneParams['url'] = YOUTUBE_REQUEST_PARAMS['search'].baseUrl;
-      reqCloneParams['params'] =
+      reqCloneParams.url = YOUTUBE_REQUEST_PARAMS['search'].baseUrl;
+      reqCloneParams.params =
         (request.params ? request.params : new HttpParams())
           .set('part', YOUTUBE_REQUEST_PARAMS['search'].part)
           .set('type', YOUTUBE_REQUEST_PARAMS['search'].type!)
           .set('maxResults', YOUTUBE_REQUEST_PARAMS['search'].maxResults!)
           .set('q', searchRequest);
     } else if (request.headers.has(YoutubeRequestHeaders.GET_DATA_BY_IDS)) {
-      reqCloneParams['url'] = YOUTUBE_REQUEST_PARAMS['video'].baseUrl;
-      reqCloneParams['params'] =
+      reqCloneParams.url = YOUTUBE_REQUEST_PARAMS['video'].baseUrl;
+      reqCloneParams.params =
         (request.params ? request.params : new HttpParams())
           .set('part', YOUTUBE_REQUEST_PARAMS['video'].part)
           .set('id', searchRequest);
