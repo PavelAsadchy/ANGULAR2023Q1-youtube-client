@@ -1,10 +1,10 @@
 interface SortOption {
-  label: string,
-  isModeOn: boolean,
-  isUp: boolean
+  label: string;
+  isModeOn: boolean;
+  isUp: boolean;
 }
 
 export interface SortBy {
-  date: SortOption,
-  viewsCount: SortOption
+  date: SortOption;
+  viewsCount: SortOption;
 }

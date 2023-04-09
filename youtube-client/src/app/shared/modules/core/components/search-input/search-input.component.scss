@@ -40,15 +40,16 @@
     }
   }
 
-  &__btn {
-    margin-right: 10px;
-    padding: 0 22px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
+  // &__btn {
+  //   margin-right: 10px;
+  //   padding: 0 22px;
+  //   border-top-right-radius: 5px;
+  //   border-bottom-right-radius: 5px;
+  // }
 
   &__settings-btn {
     width: 24px;
+    margin-left: 10px;
     padding: 4px;
     border-radius: 5px;
   }

@@ -11,11 +11,15 @@
     </svg>
 
     <div class="search-input__wrapper">
-      <input [(ngModel)]="searchInput" class="search-input__field">
+      <input
+        class="search-input__field"
+        type="search"
+        #searchInput
+      >
 
-      <button class="button search-input__btn" (click)="enableResultList()">
+      <!-- <button class="button search-input__btn" (click)="enableResultList()">
         search
-      </button>
+      </button> -->
 
       <button class="button search-input__settings-btn" (click)="toggleSettings()">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

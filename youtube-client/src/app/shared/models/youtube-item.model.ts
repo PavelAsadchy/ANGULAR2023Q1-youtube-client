@@ -38,6 +38,16 @@ export interface YoutubeItemStatistics {
   commentCount: number;
 }
 
+export interface YoutubeSearchResult {
+  kind: string;
+  etag: string;
+  id: {
+    kind: string;
+    videoId: string;
+  };
+  snippet: YoutubeItemSnippet;
+}
+
 export interface YoutubeItem {
   kind: string;
   etag: string;
