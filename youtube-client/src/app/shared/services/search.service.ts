@@ -15,9 +15,7 @@ export class SearchService {
 
   resultListEnabled = false;
 
-  enableResultList(isEnabled: boolean) {
-    this.resultListEnabled = isEnabled;
-  }
+  serchResultList!: YoutubeItem[];
 
   getYoutubeData(searchRequest: string): Observable<YoutubeItem[]> {
     return this.getIdsBySearchRequest(searchRequest)
@@ -51,5 +49,4 @@ export class SearchService {
         }),
       );
   }
-
 }

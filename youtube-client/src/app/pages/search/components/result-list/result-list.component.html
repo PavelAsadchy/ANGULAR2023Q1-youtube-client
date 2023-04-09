@@ -1,6 +1,6 @@
 <ul class="result-list">
   <li
-    *ngFor="let item of resultList
+    *ngFor="let item of searchService.serchResultList
       | sortByDate:sortingModeService.sortingMode.date.isModeOn:sortingModeService.sortingMode.date.isUp
       | sortByViews:sortingModeService.sortingMode.viewsCount.isModeOn:sortingModeService.sortingMode.viewsCount.isUp
       | searchByString:sortingModeService.resultsSearch"

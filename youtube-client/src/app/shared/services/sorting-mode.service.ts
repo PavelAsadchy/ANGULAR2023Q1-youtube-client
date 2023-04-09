@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SortBy } from '../models/sort-by.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,6 +8,8 @@ import { SortBy } from '../models/sort-by.model';
 export class SortingModeService {
 
   resultsSearch = '';
+
+  isSearchEnabled$: BehaviorSubject<boolean> = new BehaviorSubject(true);
 
   sortingMode: SortBy = {
     date: {

@@ -4,6 +4,7 @@ import { map, distinctUntilChanged, filter, takeUntil, switchMap, debounceTime }
 import { SearchService } from '../../../../../shared/services/search.service';
 import { SortingModeService } from '../../../../../shared/services/sorting-mode.service';
 import { UnsubscribeService } from '../../../../../shared/services/unsubscribe.service';
+import { YoutubeItem } from '../../../../../shared/models/youtube-item.model';
 
 @Component({
   selector: 'app-search-input',
@@ -32,15 +33,11 @@ export class SearchInputComponent implements AfterViewInit, OnDestroy {
         takeUntil(this.unsubscribeService.subscription),
         switchMap((searchRequest: string) => this.searchService.getYoutubeData(searchRequest))
       )
-      .subscribe(res => console.log(res));
+      .subscribe((res: YoutubeItem[]) => this.searchService.serchResultList = res);
   }
 
   ngOnDestroy(): void {
     this.unsubscribeService.destroy();
-  }
-
-  enableResultList(): void {
-    this.searchService.enableResultList(true);
   }
 
   toggleSettings(): void {

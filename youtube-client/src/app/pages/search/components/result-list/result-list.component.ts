@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { YoutubeItem } from '../../../../shared/models/youtube-item.model';
 import { SortingModeService } from '../../../../shared/services/sorting-mode.service';
-import { _mockedData } from './_mockedData';
 import { NavigateService } from '../../../../shared/services/navigate.service';
 import { SelectedItemService } from '../../../../shared/services/selected-item.service';
+import { SearchService } from '../../../../shared/services/search.service';
 
 @Component({
   selector: 'app-result-list',
@@ -13,11 +13,10 @@ import { SelectedItemService } from '../../../../shared/services/selected-item.s
 export class ResultListComponent {
   constructor(
     public sortingModeService: SortingModeService,
+    public searchService: SearchService,
     private navigateService: NavigateService,
     private selectedItemService: SelectedItemService,
   ) {}
-
-  resultList: YoutubeItem[] = _mockedData;
 
   selectItem(item: YoutubeItem): void {
     this.selectedItemService.initSlected(item);

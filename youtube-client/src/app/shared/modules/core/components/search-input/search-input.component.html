@@ -14,12 +14,9 @@
       <input
         class="search-input__field"
         type="search"
+        [disabled]="(sortingModeService.isSearchEnabled$ | async) === false"
         #searchInput
       >
-
-      <!-- <button class="button search-input__btn" (click)="enableResultList()">
-        search
-      </button> -->
 
       <button class="button search-input__settings-btn" (click)="toggleSettings()">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,6 +51,7 @@
       id="resultsSearch"
       type="search"
       class="search-input__search-results"
-      [(ngModel)]="sortingModeService.resultsSearch">
+      [(ngModel)]="sortingModeService.resultsSearch"
+    >
   </div>
 </div>
