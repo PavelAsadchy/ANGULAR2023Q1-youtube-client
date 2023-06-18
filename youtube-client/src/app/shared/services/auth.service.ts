@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { NavigateService } from './navigate.service';
 import { DEFAULT_USER_NAME, LocalStorageKeys } from '../consts';
 import { LoginFormValue } from '../models/login-form-value.model';
@@ -14,7 +14,16 @@ export class AuthService {
 
   isAuthorized$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-  setAuthToken(loginFormValue: LoginFormValue) {
+  doLogin(loginFormValue: LoginFormValue): Observable<boolean> {
+    localStorage.setItem(
+      LocalStorageKeys.AUTH_TOKEN,
+      JSON.stringify(loginFormValue),
+    );
+
+    return of(true);
+  }
+
+  setAuthToken(loginFormValue: LoginFormValue): void {
     localStorage.setItem(
       LocalStorageKeys.AUTH_TOKEN,
       JSON.stringify(loginFormValue),

@@ -4,6 +4,9 @@ import { LoginFormValue } from '../../../shared/models/login-form-value.model';
 import { AuthService } from '../../../shared/services/auth.service';
 import { NavigateService } from '../../../shared/services/navigate.service';
 import { ValidationService } from '../../../shared/services/validation.service';
+import { Store } from '@ngrx/store';
+import { AuthState } from 'src/app/shared/stores/auth-store/auth.state';
+import { AUTH_LOGIN_ACTION } from 'src/app/shared/stores/auth-store/auth.actions';
 
 @Component({
   selector: 'app-auth',
@@ -15,6 +18,7 @@ export class AuthComponent {
     private fb: FormBuilder,
     public authService: AuthService,
     public navigateService: NavigateService,
+    private store: Store<AuthState>,
   ) { }
 
   loginForm = this.fb.group({
@@ -31,10 +35,11 @@ export class AuthComponent {
   });
 
   onSubmit(): void {
-    this.authService.setAuthToken(
-      this.loginForm.value as LoginFormValue,
-    );
-    this.navigateService.goTo(['/search']);
+    this.store.dispatch(AUTH_LOGIN_ACTION({ user: this.loginForm.value as LoginFormValue }));
+    // this.authService.setAuthToken(
+    //   this.loginForm.value as LoginFormValue,
+    // );
+    // this.navigateService.goTo(['/search']);
   }
 
   isFormControlValid(controlName: string): boolean {

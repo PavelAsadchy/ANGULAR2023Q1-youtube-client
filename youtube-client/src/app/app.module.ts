@@ -11,6 +11,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CoreModule } from './shared/modules/core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminModule } from './pages/admin/admin.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { SharedStoreModule } from './shared/stores/shared-store.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,10 @@ import { AdminModule } from './pages/admin/admin.module';
     CoreModule,
     BrowserAnimationsModule,
     AdminModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    SharedModule,
+    SharedStoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

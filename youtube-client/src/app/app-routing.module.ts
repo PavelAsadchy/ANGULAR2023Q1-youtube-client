@@ -9,7 +9,7 @@ import { AdminComponent } from './pages/admin/container/admin.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'search',
     pathMatch: 'full',
   },
   {
